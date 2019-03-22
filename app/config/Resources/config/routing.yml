@@ -1,0 +1,14 @@
+home_page:
+    path:     /index1
+    defaults: { _controller: FrontBundle:Pages:index }
+
+detai_produit:
+    path:     /detailProduit/{id}
+    defaults: { _controller: FrontBundle:DetailProduit:readById }
+
+all_products:
+    path:     /allProducts
+    defaults: { _controller: FrontBundle:AllProducts:readAll }
+
+
+

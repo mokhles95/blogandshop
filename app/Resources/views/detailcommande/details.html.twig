@@ -1,0 +1,48 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Details de la commande</h1>
+
+    <table >
+        <thead>
+        <tr>
+            <th>Id</th>
+            <th>IdCommande</th>
+            <th>IdProduit</th>
+            <th>Prix Produit</th>
+            <th>Details Produit</th>
+            <th>User id</th>
+            <th>Couleur</th>
+            <th>Taille</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for detail in details %}
+            <tr>
+                <td>{{ detail.id}}</td>
+                <td>{{ detail.commande.id}}</td>
+                <td>{{ detail.produit.id}}</td>
+                <td>{{ detail.produit.prix}}</td>
+                <td>{{ detail.produit.libelleFr}}</td>
+                <td>{{ detail.commande.user.id}}</td>
+                <td>{{  detail.couleur }}</td>
+                <td>{{  detail.taille }}</td>
+
+
+
+
+
+            </tr>
+        {% endfor %}
+
+        <tr class ="cart_item">
+            <td colspan="4" o>
+            </td>
+            <td>Total :</td>
+            <td>${{ details[0].commande.total }}</td>
+        </tr>
+        </tbody>
+    </table>
+
+
+{% endblock %}
